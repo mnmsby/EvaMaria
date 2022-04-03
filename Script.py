@@ -13,18 +13,41 @@ Here is the help for my commands..."""
 ◉ Updates : [Pencemo Designs](https://t.me/pencemodesigns)
 ◉ Source Code : [Click here](https://t.me/AdhavaaBiriyaniKittiyalo)"""
     
-    SOURCE_TXT = """<b>NOTE:</b>
-- Eva Maria is a open source project. 
-- Source - https://github.com/EvamariaTG/EvaMaria  
+    SOURCE_TXT = """<b>Our Services 🌐
 
-<b>DEVS:</b>
-- <a href=https://t.me/TeamEvamaria>Team Eva Maria</a>"""
+🗣 Telegram Groups:</b>
+https://t.me/pencemodesign
+https://t.me/free_graphics_download
+
+<b>👥 Telegram Channels:</b>
+https://t.me/pencemodesigns
+https://t.me/pencemo_mockup
+https://t.me/pencemo_tools
+https://t.me/design_soft_app
+https://t.me/vfx_temp
+https://t.me/+XrXE3qJbZRM1MWJl
+
+<b>🤖 Telegram Bots:</b>
+https://t.me/Typopng_bot
+https://t.me/Unicodepro_bot
+https://t.me/FreeGfx_bot
+
+<b>Follow Us :</b>
+
+<b>Youtube:</b>
+youtube.com/c/pencemodesigns
+
+<b>Facebook:</b>
+www.facebook.com/pencemodesigns
+
+<b>Instagram :</b>
+www.instagram.com/pencemo_designs"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
 
 <b>NOTE:</b>
-1. eva maria should have admin privillage.
+1. should have admin privillage.
 2. only admins can add filters in a chat.
 3. alert buttons have a limit of 64 characters.
 
@@ -35,7 +58,7 @@ Here is the help for my commands..."""
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
     BUTTON_TXT = """Help: <b>Buttons</b>
 
-- Eva Maria Supports both url and alert inline buttons.
+- Supports both url and alert inline buttons.
 
 <b>NOTE:</b>
 1. Telegram will not allows you to send buttons without any content, so content is mandatory.
@@ -74,9 +97,7 @@ these are the extra features of Eva Maria
 
 <b>Commands and Usage:</b>
 • /id - <code>get id of a specified user.</code>
-• /info  - <code>get information about a user.</code>
-• /imdb  - <code>get the film information from IMDb source.</code>
-• /search  - <code>get the film information from various sources.</code>"""
+• /info  - <code>get information about a user.</code>"""
     ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
@@ -93,12 +114,13 @@ This module only works for my admins
 • /ban  - <code>to ban a user.</code>
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
+• /settings  -  <code>to change settings.</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
-    STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
-★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
-★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code>
-★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱
-★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱"""
+    STATUS_TXT = """◉ Totel Files: <code>{}</code>
+◉ Totel Users: <code>{}</code>
+◉ Totel Chats: <code>{}</code>
+◉ Used Storage: <code>{}</code> 𝙼𝚒𝙱
+◉ Free Storage: <code>{}</code> 𝙼𝚒𝙱"""
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
