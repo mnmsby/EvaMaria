@@ -275,6 +275,25 @@ async def channel_info(bot, message):
         await message.reply_document(file)
         os.remove(file)
 
+@Client.on_message(filters.command('help') & filters.user(ADMINS))
+async def help(bot, message):
+    buttons = [[
+            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
+            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
+        ], [
+            InlineKeyboardButton('Connection', callback_data='coct'),
+            InlineKeyboardButton('Extra Mods', callback_data='extra')
+        ], [
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('Status ⏰', callback_data='stats')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.HELP_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
 
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
