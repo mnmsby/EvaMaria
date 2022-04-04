@@ -275,20 +275,6 @@ async def channel_info(bot, message):
         await message.reply_document(file)
         os.remove(file)
 
-@Client.on_message(filters.command('help') & filters.user(ADMINS))
-async def help(client, message):
-    buttons = [[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help')
-            ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.HELP_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-        return
-
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
@@ -344,6 +330,17 @@ async def delete(bot, message):
             else:
                 await msg.edit('File not found in database')
 
+@Client.on_message(filters.command('help') & filters.user(ADMINS))
+async def help(bot, message):
+    await message.reply_text(
+        'This is your help menu',
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('🛠 Help 🛠', callback_data='help')
+                ]
+            ]
+    )
 
 @Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
 async def delete_all_index(bot, message):
