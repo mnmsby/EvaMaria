@@ -245,12 +245,13 @@ async def start(client, message):
         )
 @Client.on_message(filters.command('helps') & filters.user(ADMINS))
 async def helps(bot, message):
-    buttons = [
+        reply_markup = InlineKeyboardMarkup(
+            [
             [
                 InlineKeyboardButton('ℹ️ Help', callback_data='help')
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(buttons)
+        )
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
     
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
