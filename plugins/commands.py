@@ -330,17 +330,6 @@ async def delete(bot, message):
             else:
                 await msg.edit('File not found in database')
 
-@Client.on_message(filters.command('help') & filters.user(ADMINS))
-async def help(bot, message):
-    await message.reply_text(
-        'This is your help menu',
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('🛠 Help 🛠', callback_data='help')
-                ]
-            ]
-    )
 
 @Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
 async def delete_all_index(bot, message):
