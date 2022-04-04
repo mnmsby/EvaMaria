@@ -278,15 +278,8 @@ async def channel_info(bot, message):
 @Client.on_message(filters.command('help') & filters.user(ADMINS))
 async def help(client, message):
     buttons = [[
-            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
-            ],[
-            InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods', callback_data='extra')
-            ],[
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('Status ⏰', callback_data='stats')
-        ]]
+            InlineKeyboardButton('ℹ️ Help', callback_data='help')
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
