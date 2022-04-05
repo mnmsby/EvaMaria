@@ -243,16 +243,24 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-@Client.on_message(filters.command('helps') & filters.user(ADMINS))
-async def helps(client, message):
-        reply_markup = InlineKeyboardMarkup(
-            [
-            [
-                InlineKeyboardButton('ℹ️ Help', callback_data='help')
-            ]
-            ]
-        )
-        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+@Client.on_message(filters.command(["help"]) & filters.private, group=1)
+async def help(bot, update):
+    buttons = [[
+        InlineKeyboardButton('Home 💠', callback_data='start'),
+        InlineKeyboardButton('About 🚩', callback_data='about')
+    ],[
+        InlineKeyboardButton('Close 🔐', callback_data='close')
+    ]]
+    
+    reply_markup = InlineKeyboardMarkup(buttons)
+    
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=script.HELP_TEXT,
+        reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=update.message_id
+    )    
     
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
