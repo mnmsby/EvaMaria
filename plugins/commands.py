@@ -244,7 +244,7 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         )
 @Client.on_message(filters.command('helps') & filters.user(ADMINS))
-async def helps(bot, message):
+async def helps(client, message):
         reply_markup = InlineKeyboardMarkup(
             [
             [
