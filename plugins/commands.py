@@ -258,11 +258,10 @@ async def help(bot, update):
 
 @Client.on_message(filters.command(["search"]) & filters.private, group=1)
 async def search(bot, update):
-    buttons = [[
-        InlineKeyboardButton("🔎 SEARCH HERE 🔍", switch_inline_query_current_chat='')
-    ]]
     
-    reply_markup = InlineKeyboardMarkup(buttons)
+    reply_markup = InlineKeyboardMarkup([[
+        InlineKeyboardButton("🔎 SEARCH HERE 🔍", switch_inline_query_current_chat='')
+    ]])
     
     await bot.send_message(
         chat_id=update.chat.id,
