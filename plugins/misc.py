@@ -101,7 +101,7 @@ async def who_is(client, message):
             message=chat_photo.big_file_id
         )
         buttons = [[
-            InlineKeyboardButton('❎ Close', callback_data='close_data')
+            InlineKeyboardButton('❎ Close ❎', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -115,7 +115,7 @@ async def who_is(client, message):
         os.remove(local_user_photo)
     else:
         buttons = [[
-            InlineKeyboardButton('❎ Close', callback_data='close_data')
+            InlineKeyboardButton('❎ Close ❎', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -127,7 +127,7 @@ async def who_is(client, message):
         )
     await status_message.delete()
 
-@Client.on_message(filters.command(["imdb", 'search']))
+@Client.on_message(filters.command(["imdb", 'searching']))
 async def imdb_search(client, message):
     if ' ' in message.text:
         k = await message.reply('Searching ImDB')
