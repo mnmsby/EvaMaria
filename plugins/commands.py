@@ -255,21 +255,6 @@ async def help(bot, update):
         parse_mode="html",
         reply_to_message_id=update.message_id
     )    
-
-@Client.on_message(filters.command(["search"]) & filters.private, group=1)
-async def search(bot, update):
-    
-    reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔎 SEARCH HERE 🔍", switch_inline_query_current_chat='')
-    ]])
-    
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text="<b>For searching files please click button below 👇</b>"
-        reply_markup=reply_markup,
-        parse_mode="html",
-        reply_to_message_id=update.message_id
-    )
     
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
