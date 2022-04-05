@@ -243,13 +243,11 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-@Client.on_message(filters.command(["help"]) & filters.private, group=1)
+@Client.on_message(filters.command(["help"]) & filters..user(ADMINS))
 async def help(bot, update):
     buttons = [[
-        InlineKeyboardButton('Home 💠', callback_data='start'),
-        InlineKeyboardButton('About 🚩', callback_data='about')
-    ],[
-        InlineKeyboardButton('Close 🔐', callback_data='close')
+        InlineKeyboardButton('Help', callback_data='help'),
+        InlineKeyboardButton('About', callback_data='about')
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
