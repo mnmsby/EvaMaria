@@ -24,9 +24,6 @@ async def start(client, message):
         buttons = [
             [
                 InlineKeyboardButton('📢 Updates', url='https://t.me/pencemodesigns')
-            ],
-            [
-                InlineKeyboardButton('🔧 Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -42,13 +39,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('⚡️ Share Me ⚡️', url=f'http://t.me/share/url?url=http://t.me/pencemodesign')
+            InlineKeyboardButton('🌐 Our Services 🌐', callback_data='source')
             ],[
             InlineKeyboardButton('🔖 Support', url='https://t.me/pencemodesign'),
             InlineKeyboardButton('Updates 🔊', url='https://t.me/pencemodesigns')
             ],[
-            InlineKeyboardButton('🛠 Help', callback_data='help'),
-            InlineKeyboardButton('About ✒️', callback_data='about')
+            InlineKeyboardButton('😈 MyDev', url='https://t.me/mnmsby'),
+            InlineKeyboardButton('About 📝', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -85,13 +82,13 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('⚡️ Share Me ⚡️', url=f'http://t.me/share/url?url=http://t.me/pencemodesign')
+            InlineKeyboardButton('🌐 Our Services 🌐', callback_data='source')
             ],[
             InlineKeyboardButton('🔖 Support', url='https://t.me/pencemodesign'),
             InlineKeyboardButton('Updates 🔊', url='https://t.me/pencemodesigns')
             ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('😈 MyDev', url='https://t.me/mnmsby'),
+            InlineKeyboardButton('About 📝', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -156,7 +153,7 @@ async def start(client, message):
         await sts.delete()
         return
     elif data.split("-", 1)[0] == "DSTORE":
-        sts = await message.reply("Please wait")
+        sts = await message.reply("Please wait...")
         b_string = data.split("-", 1)[1]
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
         try:
@@ -246,8 +243,7 @@ async def start(client, message):
 @Client.on_message(filters.command(["help"]) & filters.user(ADMINS))
 async def help(bot, update):
     buttons = [[
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('About', callback_data='about')
+        InlineKeyboardButton('🛠 Help 🛠', callback_data='help')
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -259,6 +255,22 @@ async def help(bot, update):
         parse_mode="html",
         reply_to_message_id=update.message_id
     )    
+
+@Client.on_message(filters.command(["search"]) & filters.private, group=1)
+async def search(bot, update):
+    buttons = [[
+        InlineKeyboardButton("🔎 SEARCH HERE 🔍", switch_inline_query_current_chat='')
+    ]]
+    
+    reply_markup = InlineKeyboardMarkup(buttons)
+    
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text="<b>For searching files please click button below 👇</b>"
+        reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=update.message_id
+    )
     
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
