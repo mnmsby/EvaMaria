@@ -243,7 +243,7 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-@Client.on_message(filters.command(["help"]) & filters..user(ADMINS))
+@Client.on_message(filters.command(["help"]) & filters.user(ADMINS))
 async def help(bot, update):
     buttons = [[
         InlineKeyboardButton('Help', callback_data='help'),
