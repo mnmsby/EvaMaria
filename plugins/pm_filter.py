@@ -157,7 +157,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('Piracy Is Crime')
+                    return await query.answer('just for a രസം')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
@@ -170,7 +170,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             title = query.message.chat.title
 
         else:
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('just for a രസം')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == "creator") or (str(userid) in ADMINS):
@@ -404,13 +404,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('⚡️ Share Me ⚡️', url=f'http://t.me/share/url?url=http://t.me/pencemodesign')
+            InlineKeyboardButton('🌐 Our Services 🌐', callback_data='source')
             ],[
             InlineKeyboardButton('🔖 Support', url='https://t.me/pencemodesign'),
             InlineKeyboardButton('Updates 🔊', url='https://t.me/pencemodesigns')
             ],[
-            InlineKeyboardButton('🛠 Help', callback_data='help'),
-            InlineKeyboardButton('About ✒️', callback_data='about')
+            InlineKeyboardButton('😈 MyDev', url='https://t.me/mnmsby'),
+            InlineKeyboardButton('About 📝', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -427,7 +427,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Connection', callback_data='coct'),
             InlineKeyboardButton('Extra Mods', callback_data='extra')
         ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('Status ⏰', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -440,9 +439,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('🌐 Our Services 🌐', callback_data='source')
         ],[
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton(' Help 🛠', callback_data='help')
-        ],[
+            InlineKeyboardButton('🔙 Back', callback_data='start'),
             InlineKeyboardButton('🔊 Updates', url='https://t.me/pencemodesigns'),
             InlineKeyboardButton('Close ❎', callback_data='close_data')
         ]]
@@ -614,7 +611,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+    await query.answer('just for a രസം')
 
 
 async def auto_filter(client, msg, spoll=False):
