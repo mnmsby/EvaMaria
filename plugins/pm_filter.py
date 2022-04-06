@@ -64,7 +64,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}] 📥 {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -73,7 +73,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"📥 {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
@@ -451,7 +451,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('🔙 Back', callback_data='about')
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('About 📝', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
