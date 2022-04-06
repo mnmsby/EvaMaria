@@ -1,17 +1,18 @@
 class script(object):
     START_TXT = """<b>Hey {} 👋😘
-I'm <a href=https://t.me/{}>{}</a>, admin of <a href=https://t.me/pencemodesign>Pencemo Designs</a>
-
-For More Click Help Button 👇</b>"""
-    HELP_TXT = """Hey {}
-Here is the help for my commands..."""
-    ABOUT_TXT = """<b>Something About Me ✌️</b>
+I'm <a href=https://t.me/{}>{}</a>, admin of <a href=https://t.me/pencemodesign>Pencemo Designs</a></b>"""
+    HELP_TXT = """Hey 👋😘👋😘
+Here is the help for my commands...
+Click button billow to use 👇"""
+    ABOUT_TXT = """<b>Something About Me ✌️
 
 ◉ My Name : {}
-◉ MyDev : [α̅η̲ɗɾo͚ȋɗ കുഞ്ഞപ്പൻ](https://t.me/mnmsby)
-◉ Support : [Pencemo Design](https://t.me/pencemodesigns)
-◉ Updates : [Pencemo Designs](https://t.me/pencemodesigns)
-◉ Source Code : [Click here](https://t.me/AdhavaaBiriyaniKittiyalo)"""
+◉ My UserName : @viruzZbot
+◉ MyDev : <a href=https://t.me/mnmsby>α̅η̲ɗɾo͚ȋɗ കുഞ്ഞപ്പൻ</a>
+◉ Support : <a href=https://t.me/pencemodesign>Pencemo Design</a>
+◉ Updates : <a href=https://t.me/pencemodesigns>Pencemo Designs</a>
+◉ Server : <a href=https://herokuapp.com/>Heroku</a>
+◉ Source Code : <a href=https://t.me/AdhavaaBiriyaniKittiyalo>Click here</a></b>"""
     
     SOURCE_TXT = """<b>Our Services 🌐
 
